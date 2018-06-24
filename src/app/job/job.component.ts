@@ -24,7 +24,7 @@ export class JobsComponent implements OnInit {
     this.getCandidates();
   }
 
-  getJobs(): void {
+  private getJobs(): void {
     this.jobService.getJobs().subscribe(
       (data: Job[]) => { this.jobs = data; },
       error => console.error(error),
@@ -32,7 +32,7 @@ export class JobsComponent implements OnInit {
     );
   }
 
-  getCandidates(): void {
+  private getCandidates(): void {
     var candidates: Candidate[];
     this.candidateService.getCandidates().subscribe(
       (data: Candidate[]) => { candidates = data; this.candidates = candidates; },
@@ -40,11 +40,18 @@ export class JobsComponent implements OnInit {
       () => console.log("candidates fetched Successfully"));
   }
 
-  toggleCandidateDisplay(jobId: number): void {
+  hideCandidateDetails(jobId: number): void {
     var selectedJob: Job = this.jobs.find(job => job.jobId === jobId);
-    if (!!selectedJob.suitableCandidate) {
+   
       selectedJob.suitableCandidate = null;
-    } else {
+   
+     
+    
+  }
+
+  findBestCandidate(jobId: number): void {
+    var selectedJob: Job = this.jobs.find(job => job.jobId === jobId);
+   
       var suitableCandidate: Candidate;
       var matchSkillCount: number = 0;
       this.candidates.forEach(function (candidate) {
@@ -55,6 +62,6 @@ export class JobsComponent implements OnInit {
         }
       });
       selectedJob.suitableCandidate = suitableCandidate;     
-    }
+    
   }
 }

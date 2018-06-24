@@ -11,10 +11,6 @@ export class FilterJobs implements PipeTransform {
     if (!items || !searchText) {
       return items;
     }
-    items.forEach(function (item) {
-      console.log(item);
-    })
-    console.log(searchText);
     return items.filter(function (item) {
 
       if (item.name.toLowerCase().includes(searchText.toLowerCase())

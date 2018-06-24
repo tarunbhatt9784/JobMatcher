@@ -24,13 +24,9 @@
           <strong>Job Company: </strong>{{job.company}}</div>
         <div>
           <strong>Job Skills: </strong>{{job.skills}}</div>
-        <!-- <div><button *ngIf="!job.suitableCandidate" (click)="getSuitableCandidate(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">Find Candidate</button>
-        </div> -->
-        <div><button (click)="toggleCandidateDisplay(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">
+        <div><button (click)="(!job.suitableCandidate ? findBestCandidate(job.jobId): hideCandidateDetails(job.jobId))" type="button" class="find-candidate-button btn btn-outline-secondary">
           {{job.suitableCandidate ?'Hide Candidate Details':'Find Best Candidate'}}</button>
         </div>
-        <!-- <div><button *ngIf="job.suitableCandidate" href="#!" (click)="hideCandidateDetails(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">Hide Details</button>
-        </div> -->
         <div id="candidate" class="card border border-secondary rounded" *ngIf="job.suitableCandidate">
           <div class="row">
             <div class="col-md-3">
