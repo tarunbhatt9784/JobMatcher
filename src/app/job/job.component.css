@@ -1,0 +1,32 @@
+
+.display-content{
+    text-align: left;
+    
+}
+
+.card{
+    background-color: inherit;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border:0;
+}
+
+#candidate{
+    margin-top: 0;
+}
+
+.find-candidate-button {
+    margin-top:1em;
+    margin-bottom:1em;
+}
+
+.anchor-card, .anchor-tag:hover{
+    color:inherit;
+    text-decoration: none;
+}
+
+a{
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+}

@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-2 left"></div>
+  <div class="col-md-8 display-content">
+    <div class="card">
+      <strong>Search Jobs</strong>
+      <input [(ngModel)]="searchText" ng-model-options="{updateOn: 'blur'}" placeholder="Search Jobs...">
+      <p style="
+      font-size: .6em;
+      font-style: italic;
+      font-weight: bold;
+      color: blue;
+  ">Job's can be searched by title, position, skills and unique indentifier</p>
+      <br>
+      <div *ngIf="searchText"> Job Results for
+        <strong>{{searchText}}</strong>
+      </div>
+    </div>
+    <div class="card" *ngFor="let job of jobs | FilterJobs:searchText">
+      <h5 class="card-title">{{job.name}}</h5>
+      <div class="card-text">
+        <div>
+          <strong>Job Id: </strong>{{job.jobId}}</div>
+        <div>
+          <strong>Job Company: </strong>{{job.company}}</div>
+        <div>
+          <strong>Job Skills: </strong>{{job.skills}}</div>
+        <!-- <div><button *ngIf="!job.suitableCandidate" (click)="getSuitableCandidate(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">Find Candidate</button>
+        </div> -->
+        <div><button (click)="toggleCandidateDisplay(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">
+          {{job.suitableCandidate ?'Hide Candidate Details':'Find Best Candidate'}}</button>
+        </div>
+        <!-- <div><button *ngIf="job.suitableCandidate" href="#!" (click)="hideCandidateDetails(job.jobId)" type="button" class="find-candidate-button btn btn-outline-secondary">Hide Details</button>
+        </div> -->
+        <div id="candidate" class="card border border-secondary rounded" *ngIf="job.suitableCandidate">
+          <div class="row">
+            <div class="col-md-3">
+              <span>
+                <strong>Candidate Id</strong>
+              </span>
+            </div>
+            <div class="col-md-4">
+              <span>
+                <strong>Name</strong>
+              </span>
+            </div>
+            <div class="col-md-5">
+              <span>
+                <strong>Skills</strong>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <span>{{job.suitableCandidate.candidateId}}</span>
+            </div>
+            <div class="col-md-4">
+              <span>{{job.suitableCandidate.name}}</span>
+            </div>
+            <div class="col-md-5">
+              <span>{{job.suitableCandidate.skillTags}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 right"></div>
+</div>
