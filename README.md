@@ -1,10 +1,10 @@
 ## Project Title
-The project is a web application which would be used by recruiters to demonstrate the following objectives
+The project is a web application which would be used by recruiters to achieve the following objectives
 - Search jobs on the basis of name, skills and organization.
 - Find the most suitable candidate for the job. 
 
 ## Pre-requisites
-- Please use latest node to run npm install
+- Please install the latest node version on the system. Visit https://nodejs.org/en/download/ for more steps.
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. Please install angular cli using "npm i -g @angular/cli"
 
 ## Deployment Steps
@@ -29,7 +29,7 @@ The project is a web application which would be used by recruiters to demonstrat
 - Once the jobs are displayed, use the button 'Find Best Candidate' to display best candidate.
 - Best candidate would be searched by matching skills of job and list of candidates.  
 - The best candidate section of the screen could be hidden by clicing on the button 'Hide Candidate Details'.
-- A gif will be shared with a demo.
+- A gif will be shared with a demo. Please look for DEMO.gif in the very same folder where README.MD is present. 
 
 ## Built with 
 Angular CLI: 6.0.8
