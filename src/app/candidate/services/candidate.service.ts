@@ -11,7 +11,7 @@ export class CandidateService {
   constructor(private http:HttpClient) { }
 
   getCandidates() {
-    return this.http.get('http://private-76432-jobadder1.apiary-mock.com/candidates');
-  }
+    return this.http.get("./assets/resources/Candidates.json")
+  } 
  
 }
