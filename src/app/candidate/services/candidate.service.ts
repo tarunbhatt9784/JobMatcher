@@ -10,8 +10,8 @@ export class CandidateService {
 
   constructor(private http:HttpClient) { }
 
-  getCandidates() {
-    return this.http.get("./assets/resources/Candidates.json")
+  getCandidates() { 
+    return this.http.get("http://localhost:5000/api/Candidate");
   } 
  
 }

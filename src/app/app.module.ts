@@ -9,6 +9,7 @@ import { JobsComponent } from './job/job.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import {FilterJobs } from './job/filters/filter-jobs.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,

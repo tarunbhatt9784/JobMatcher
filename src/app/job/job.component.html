@@ -1,6 +1,13 @@
 <div class="row">
-  <div class="col-md-2 left"></div>
+  <div class="col-md-2 left">
+    
+  </div>
   <div class="col-md-8 display-content">
+    <div class = "card menu">
+       <div class="row">
+         <div class="col-md-4">Add Job</div>
+       </div>
+    </div>
     <div class="card">
       <strong>Search Jobs</strong>
       <input [(ngModel)]="searchText" ng-model-options="{updateOn: 'blur'}" placeholder="Search Jobs...">
@@ -52,8 +59,8 @@
             <div class="col-md-4">
               <span>{{job.suitableCandidate.name}}</span>
             </div>
-            <div class="col-md-5">
-              <span>{{job.suitableCandidate.skillTags}}</span>
+            <div class="col-md-5">Tags
+              <span>{{job.suitableCandidate.skills}}</span>
             </div>
           </div>
         </div>
